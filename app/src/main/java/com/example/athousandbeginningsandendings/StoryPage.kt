@@ -22,7 +22,7 @@ fun StoryPage(
 ) {
 
     val scrollState = rememberScrollState()
-        Box(modifier = modifier) {
+    Box(modifier = modifier) {
             Column(
                 modifier = Modifier
                     .verticalScroll(scrollState)

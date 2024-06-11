@@ -12,9 +12,7 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -37,23 +35,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.athousandbeginningsandendings.data.DataSource
 import com.example.athousandbeginningsandendings.model.Book
 
-
-
-
-
-
-
 @Composable
 fun BookList(
     books: List<Book>,
     onCardClicked: (Int) -> Unit,
     modifier: Modifier = Modifier)
 {
-    val scrollState = rememberScrollState()
-
-    LazyColumn(
-        modifier = Modifier.verticalScroll(scrollState)
-    ) {
+    LazyColumn {
         items(books) { book ->
             StoryCard(
                 story = book,
